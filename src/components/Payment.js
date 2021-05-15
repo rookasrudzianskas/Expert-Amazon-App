@@ -7,7 +7,7 @@ import {useElements, useStripe, CardElement} from "@stripe/react-stripe-js";
 import {Card} from "@material-ui/core";
 import CurrencyFormat from "react-currency-format";
 import {getBasketTotal} from "../reducer";
-import axios from "axios";
+import axios from "../axios";
 import {useHistory} from "react-router-dom";
 
 const Payment = () => {
