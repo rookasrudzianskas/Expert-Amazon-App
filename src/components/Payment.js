@@ -93,6 +93,10 @@ const Payment = () => {
             setError(null);
             // there will be nothing processing anymore
             setProcessing(false);
+
+            dispatch({
+                type: 'EMPTY_BASKET',
+            })
             // redirect to the orders page, wehre the orders show up, after successful payment
             history.replace('/orders');
 
