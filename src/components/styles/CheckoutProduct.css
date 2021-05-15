@@ -38,6 +38,11 @@
     cursor: pointer;
 }
 
+/*.checkoutProduct__info > button:active {*/
+/*    font-weight: bold;*/
+/*    background-color: #eaeded;*/
+/*}*/
+
 
 .checkoutProduct__image {
     object-fit: contain;
@@ -52,8 +57,6 @@
     transition: all 0.3s;
 }
 .checkoutProduct__rating:hover {
-    transform: scale(1.4);
-    transform-origin: left;
 }
 
 .checkoutProduct__title {
