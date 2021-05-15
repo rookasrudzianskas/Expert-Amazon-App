@@ -11,6 +11,10 @@ import Payment from "./components/Payment";
 import { loadStripe} from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
+// entering the key, it could be public
+//loads stripe
+const promise = loadStripe('pk_test_51IrKTaKakUNLk7QMXDMtqcFseRx7ff17QVoDufCnzhJ4zjOuhr6isqP6HUbPLfRgdBPrrVCfKooPD7Dyd1yqEVIi00NAOPMSE4');
+
 function App() {
 
     const [{}, dispatch] = useStateValue();
@@ -49,7 +53,10 @@ function App() {
 
                 <Route path="/payment">
                     <Header />
-                    <Payment />
+                    <Elements stripe={promise}>
+                        {/* the payment component must be inside the elements*/}
+                        <Payment />
+                    </Elements>
                 </Route>
 
                 <Route path="/checkout">

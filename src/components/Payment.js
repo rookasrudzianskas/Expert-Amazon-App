@@ -3,10 +3,16 @@ import "./styles/Payment.css";
 import {useStateValue} from "../StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import {Link} from "react-router-dom";
+import {useElements, useStripe, CardElement} from "@stripe/react-stripe-js";
 
 const Payment = () => {
 
     const [{user, basket}, dispatch] = useStateValue();
+
+    // stripe payment processing in here
+    const stripe = useStripe();
+    const elements = useElements();
+
 
     return (
         <div className="payment">
