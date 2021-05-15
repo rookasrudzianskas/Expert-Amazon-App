@@ -68,7 +68,30 @@ const Payment = () => {
         // the payment goes here
         // I have the payment which I want to make per you, for example 50 dollars, so please give me the payment secret
 
-        // const payload = await stripe
+        // this makes the payment
+        // this waits for the user to get the clientSecret, and forms the payment, with secret and takes the object, with payment method
+        const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                // payment method gets card, which is from the card element straight
+                //elements from useElements
+                // this clientsecret lets the stripe to know how much to charge the customer
+                card: element.getElement(CardElement)
+            }
+        //    after the response comes back, we do the job, important to desctructure it
+        //    the paymentIntent is the payment confirmation which comes back
+        }).then(({ paymentIntent }) => {
+        //    payment intent = payment confirmation
+        //    if everything was good
+        //    everything went well,  transaction succeeded
+            setSucceeded(true);
+            // there was no error
+            setError(null);
+            // there will be nothing processing anymore
+            setProcessing(false);
+            // redirect to the orders page, wehre the orders show up, after successful payment
+            history.replace('/orders');
+
+        });
 
     }
 
