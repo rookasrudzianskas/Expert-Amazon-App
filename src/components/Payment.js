@@ -8,8 +8,11 @@ import {Card} from "@material-ui/core";
 import CurrencyFormat from "react-currency-format";
 import {getBasketTotal} from "../reducer";
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 const Payment = () => {
+
+    const history = useHistory();
 
     const [{user, basket}, dispatch] = useStateValue();
     // states to describe button state
@@ -75,7 +78,7 @@ const Payment = () => {
                 // payment method gets card, which is from the card element straight
                 //elements from useElements
                 // this clientsecret lets the stripe to know how much to charge the customer
-                card: element.getElement(CardElement)
+                card: elements.getElement(CardElement)
             }
         //    after the response comes back, we do the job, important to desctructure it
         //    the paymentIntent is the payment confirmation which comes back
