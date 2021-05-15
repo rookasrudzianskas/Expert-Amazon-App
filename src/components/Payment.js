@@ -30,7 +30,8 @@ const Payment = () => {
             {/*    payment setcion reviewing items  */}
                 <div className="payment__section">
                     <div className="payment__title">
-                        <h3 className="payment_reviewAndDelivery">Review items and delivery</h3>
+                        <h3 className="payment_reviewAndDelivery">Review items </h3>
+                        <h3>and delivery</h3>
 
                     </div>
                     <div className="payment__items">
