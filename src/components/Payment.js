@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./styles/Payment.css";
 import {useStateValue} from "../StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
@@ -20,6 +20,22 @@ const Payment = () => {
     // button error if something goes wrong
     const [disabled, setDisabled] = useState(null);
 
+    const [clientSecret, setClientSecret] = useState(true);
+
+    useEffect(() => {
+    //    run once then needed in depencencies
+    //     then the basket changes
+    //    we generate the special stripe secret which allows us to charge the customer, whenewher the basket changes, we have to get the new
+    //     secret.
+
+        const getClientSecret = async() => {
+        //        we wait till the basket changes, the customer adds something or removes
+            const response = await axios
+        }
+        // firing this function
+        getClientSecret();
+
+    }, [basket])
     // stripe payment processing in here
     const stripe = useStripe();
     const elements = useElements();
@@ -28,7 +44,13 @@ const Payment = () => {
     const handleSubmit = async(event) => {
         // do tall the fancy stripe things
         event.preventDefault();
+        // if we click the button, so the state of processing becomes true and the button gets disabled and the name changes to processiging
+        setProcessing(true);
 
+        // the payment goes here
+        // I have the payment which I want to make per you, for example 50 dollars, so please give me the payment secret
+
+        // const payload = await stripe
 
     }
 
