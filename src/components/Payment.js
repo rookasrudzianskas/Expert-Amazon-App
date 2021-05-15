@@ -2,6 +2,7 @@ import React from 'react';
 import "./styles/Payment.css";
 import {useStateValue} from "../StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
+import {Link} from "react-router-dom";
 
 const Payment = () => {
 
@@ -10,6 +11,10 @@ const Payment = () => {
     return (
         <div className="payment">
             <div className="payment__container">
+                <h1>
+                    {/*redirects to the checkout page if wants to take a look what is in it too*/}
+                    Checkout (<Link to="/checkout">{basket?.length > 1 ? `${basket?.length} items` : `${basket?.length} item`}</Link>)
+                </h1>
             {/*    payment section  */}
                 <div className="payment__section">
                     <div className="payment__title">
