@@ -90,7 +90,7 @@ const Payment = () => {
                                         <h3>Order Total: {value}</h3>
                                     )}
                                     decimalScale={2}
-                                    {/* value comes from the reducer*/}
+                                     // value comes from the reducer
                                     value={getBasketTotal(basket)}
                                     displayType={"text"}
                                     thousandSeparator={true}
