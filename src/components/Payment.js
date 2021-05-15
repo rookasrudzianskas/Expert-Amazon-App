@@ -23,11 +23,14 @@ const Payment = () => {
 
     const [clientSecret, setClientSecret] = useState(true);
 
+    //🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
     useEffect(() => {
     //    run once then needed in depencencies
     //     then the basket changes
     //    we generate the special stripe secret which allows us to charge the customer, whenewher the basket changes, we have to get the new
     //     secret.
+    //    then the basket changes, update the stipe secret which allows us to make the payment
 
         const getClientSecret = async() => {
         //        we wait till the basket changes, the customer adds something or removes
@@ -41,12 +44,16 @@ const Payment = () => {
                 url: `payments/create?total=${getBasketTotal(basket) * 100}`
             //    the response will have the client secret
             });
-
+            // we set the clinet secret of how much he wants to pay in the to the state
+            setClientSecret(response.data.clientSecret)
         }
         // firing this function
         getClientSecret();
 
-    }, [basket])
+    }, [basket]);
+
+    //🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
     // stripe payment processing in here
     const stripe = useStripe();
     const elements = useElements();
