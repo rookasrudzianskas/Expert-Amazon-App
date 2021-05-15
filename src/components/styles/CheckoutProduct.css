@@ -49,6 +49,11 @@
 
 .checkoutProduct__rating {
     display: flex;
+    transition: all 0.3s;
+}
+.checkoutProduct__rating:hover {
+    transform: scale(1.4);
+    transform-origin: left;
 }
 
 .checkoutProduct__title {
