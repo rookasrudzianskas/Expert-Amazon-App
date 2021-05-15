@@ -92,7 +92,7 @@ const Payment = () => {
         // going to the users collection, then to the specific users collection orders and then to the payment intent, to get what is in it
         //    to the payment intent id, the smae as the order id, to get the specific order
         //    we upload the order to the firebase
-            db.collection('users').doc(user?.id).collection('orders').doc(paymentIntent.id).set({
+            db.collection('users').doc(user?.id).collection('orders').doc(paymentIntent?.id).set({
                 basket: basket,
                 amount: paymentIntent.amount,
                 created: paymentIntent.created,
