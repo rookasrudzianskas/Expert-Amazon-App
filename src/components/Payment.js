@@ -25,8 +25,11 @@ const Payment = () => {
     const elements = useElements();
 
     // then the form is submitted
-    const handleSubmit = (e) => {
+    const handleSubmit = async(event) => {
         // do tall the fancy stripe things
+        event.preventDefault();
+
+
     }
 
     const handleChange = (event) => {
@@ -107,6 +110,10 @@ const Payment = () => {
                                     }</span>
                                 </button>
                             </div>
+
+                        {/*    errors   */}
+                            {error && <div>{error}</div>}
+
                         </form>
                     </div>
 
