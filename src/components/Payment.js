@@ -13,7 +13,7 @@ const Payment = () => {
             <div className="payment__container">
                 <h1>
                     {/*redirects to the checkout page if wants to take a look what is in it too*/}
-                    Checkout (<Link to="/checkout">{basket?.length > 1 ? `${basket?.length} items` : `${basket?.length} item`}</Link>)
+                    Checkout (<Link className="payment__link" to="/checkout">{basket?.length > 1 ? `${basket?.length} items 🛍️` : `${basket?.length} item 🛍️`}</Link>)
                 </h1>
             {/*    payment section  */}
                 <div className="payment__section">
@@ -30,7 +30,8 @@ const Payment = () => {
             {/*    payment setcion reviewing items  */}
                 <div className="payment__section">
                     <div className="payment__title">
-                        <h3>Review items and delivery</h3>
+                        <h3 className="payment_reviewAndDelivery">Review items and delivery</h3>
+
                     </div>
                     <div className="payment__items">
                     {/*    all the products goes here   */}
