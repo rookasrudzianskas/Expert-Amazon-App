@@ -9,6 +9,7 @@ import CurrencyFormat from "react-currency-format";
 import {getBasketTotal} from "../reducer";
 import axios from "../axios";
 import {useHistory} from "react-router-dom";
+import db from "../firebase";
 
 const Payment = () => {
 
@@ -88,6 +89,15 @@ const Payment = () => {
         //    payment intent = payment confirmation
         //    if everything was good
         //    everything went well,  transaction succeeded
+        // going to the users collection, then to the specific users collection orders and then to the payment intent, to get what is in it
+        //    to the payment intent id, the smae as the order id, to get the specific order
+        //    we upload the order to the firebase
+            db.collection('users').doc(user?.id).collection('orders').doc(paymentIntent.id).set({
+                basket: basket,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created,
+            })
+
             setSucceeded(true);
             // there was no error
             setError(null);
