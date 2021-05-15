@@ -11,6 +11,9 @@ import {getBasketTotal} from "../reducer";
 const Payment = () => {
 
     const [{user, basket}, dispatch] = useStateValue();
+    // states to describe button state
+    const [processing, setProcessing] = useState("");
+    const [succeeded, setSucceeded] = useState(false);
     // disabled button state
     const [error, setError] = useState(null);
 
@@ -97,6 +100,12 @@ const Payment = () => {
                                     prefix={"$"}
                                 />
 
+                                <button disabled={processing || disabled || succeeded}>
+                                    {/* if processing, it is going to say that the order is processing*/}
+                                    <span>{processing ? <p>Processing</p> :
+                                    "Buy Now"
+                                    }</span>
+                                </button>
                             </div>
                         </form>
                     </div>
