@@ -10,6 +10,7 @@ import {useStateValue} from "./StateProvider";
 import Payment from "./components/Payment";
 import { loadStripe} from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./components/Orders";
 
 // entering the key, it could be public
 //loads stripe
@@ -48,6 +49,7 @@ function App() {
         <Router>
             <Switch>
                 <Route path="/orders">
+                    <Header />
                     <Orders />
                 </Route>
                 <Route path="/login">
