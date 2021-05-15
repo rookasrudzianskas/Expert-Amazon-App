@@ -37,8 +37,11 @@ const Payment = () => {
                 // stripe expects total in the currencies subunits
                 // meaning, 10 eur, 1000 cents, 10$ -> 10000 dollar cents, not in the biggest, but in the smallest
                 // stick to the one currency
+                // we setup the endpoint, which we are going to call and get the response
                 url: `payments/create?total=${getBasketTotal(basket) * 100}`
-            })
+            //    the response will have the client secret
+            });
+
         }
         // firing this function
         getClientSecret();
