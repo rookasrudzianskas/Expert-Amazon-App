@@ -8,7 +8,8 @@ import {useEffect} from "react";
 import {auth} from "./firebase";
 import {useStateValue} from "./StateProvider";
 import Payment from "./components/Payment";
-
+import { loadStripe} from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 function App() {
 
