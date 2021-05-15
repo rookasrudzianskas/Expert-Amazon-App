@@ -55,6 +55,8 @@ const Payment = () => {
 
     }, [basket]);
 
+    console.log("THE SECRET IS >>>>> ", clientSecret);
+
     //🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
     // stripe payment processing in here
