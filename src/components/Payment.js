@@ -7,6 +7,7 @@ import {useElements, useStripe, CardElement} from "@stripe/react-stripe-js";
 import {Card} from "@material-ui/core";
 import CurrencyFormat from "react-currency-format";
 import {getBasketTotal} from "../reducer";
+import axios from "axios";
 
 const Payment = () => {
 
@@ -30,7 +31,14 @@ const Payment = () => {
 
         const getClientSecret = async() => {
         //        we wait till the basket changes, the customer adds something or removes
-            const response = await axios
+        //    this creates a payment object, which method is post, and url is something like that, with the sum which is made in the reducer
+            const response = await axios({
+                method: 'post',
+                // stripe expects total in the currencies subunits
+                // meaning, 10 eur, 1000 cents, 10$ -> 10000 dollar cents, not in the biggest, but in the smallest
+                // stick to the one currency
+                url: `payments/create?total=${getBasketTotal(basket) * 100}`
+            })
         }
         // firing this function
         getClientSecret();
