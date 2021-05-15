@@ -11,6 +11,9 @@ const Orders = () => {
 
     useEffect(() => {
     //        will run once, then the orders run
+    //     going to users, getting specific user, accessging that particulat users collection orders, we order by date, take snapshot,
+    //    which is mapping throug all the orders, and setting all the data to the orders collection
+    //    get the id and store in the id, get all the data and store to the data
         db.collection("users").doc(user?.uid).collection("orders").orderBy('created', 'desc').onSnapshot(snapshot => {
            setOrders(snapshot.docs.map(doc => ({
                id: doc.id,
