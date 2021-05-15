@@ -8,11 +8,18 @@ const stripe = require("stripe")('sk_test_51IrKTaKakUNLk7QM9PVGr2AhY6MBd2Y3DyC8y
 
 
 // App config
+const app = express();
 
 // middlewares
-
+// security shit
+app.use(cors({ origin: true }));
+//send and get data in json format
+app.use(express.json)
 // API routes
+app.get("/", (request, response) => response.status(200).send("hello world"));
 
 // Listen command
+
+export.api = functions.https.onRequest(app);
 
 
