@@ -34,12 +34,6 @@ const Checkout = () => {
                         />
                     ))}
 
-                {/*    Basket Item */}
-                {/*    Basket Item */}
-                {/*    Basket Item */}
-                {/*    Basket Item */}
-                {/*    Basket Item */}
-                {/*    Basket Item */}
                 </div>
             </div>
 
