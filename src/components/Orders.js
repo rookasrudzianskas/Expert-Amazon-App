@@ -30,7 +30,7 @@ const Orders = () => {
 
     return (
         <div className="orders">
-            <h1>Your orders, {user.email}</h1>
+            <h1>Your orders, {user?.email}</h1>
 
             <div className="orders__order">
                 {/* we go per all the orders and output followign for each one of them*/}

@@ -14,7 +14,7 @@ const Order = ({ order }) => {
             <p>{moment.unix(order.data.created).format('MMMM Do YYYY, h:mma')}</p>
 
             <p className="order__id">
-                <small>{order.id}</small>
+                <small>Order ID: {order.id}</small>
             </p>
 
             {/* for each order item, shows the checkout product component*/}
