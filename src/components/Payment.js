@@ -1,17 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./styles/Payment.css";
 import {useStateValue} from "../StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import {Link} from "react-router-dom";
 import {useElements, useStripe, CardElement} from "@stripe/react-stripe-js";
+import {Card} from "@material-ui/core";
+import CurrencyFormat from "react-currency-format";
+import {getBasketTotal} from "../reducer";
 
 const Payment = () => {
 
     const [{user, basket}, dispatch] = useStateValue();
+    // disabled button state
+    const [error, setError] = useState(null);
+
+    // button error if something goes wrong
+    const [disabled, setDisabled] = useState(null);
 
     // stripe payment processing in here
     const stripe = useStripe();
     const elements = useElements();
+
+    // then the form is submitted
+    const handleSubmit = (e) => {
+        // do tall the fancy stripe things
+    }
+
+    const handleChange = (event) => {
+    // listen for the changes in the cardelement
+    //     and display any errors as the customer types their card details
+    //    if it is empty make the button disabled
+        setDisabled(event.empty);
+        // if there is an error, show the error message, otherwise, nothing
+        setError(event.error ? event.error.message : "");
+    }
 
 
     return (
@@ -57,6 +79,26 @@ const Payment = () => {
                     </div>
                     <div className="payment__details">
                     {/*    Stripe is going to go here*/}
+                        <form action="" onSubmit={handleSubmit}>
+                            {/* every time I change the card element, the handlechange is going to be fired*/}
+                            <CardElement onChange={handleChange}/>
+
+                            <div className="payment__priceContainer">
+                                {/* we form the final sum of money */}
+                                <CurrencyFormat
+                                    renderText={(value) => (
+                                        <h3>Order Total: {value}</h3>
+                                    )}
+                                    decimalScale={2}
+                                    {/* value comes from the reducer*/}
+                                    value={getBasketTotal(basket)}
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                    prefix={"$"}
+                                />
+
+                            </div>
+                        </form>
                     </div>
 
                 </div>
