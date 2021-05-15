@@ -16,6 +16,7 @@ const Order = ({ order }) => {
                 <small>{order.id}</small>
             </p>
 
+            {/* for each order item, shows the checkout product component*/}
             {order.data.basket?.map(item => (
                 <CheckoutProduct
                     id={item.id}
