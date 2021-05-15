@@ -18,6 +18,7 @@ const Order = ({ order }) => {
             </p>
 
             {/* for each order item, shows the checkout product component*/}
+            {/*hideBUtton is to make te button not to pass*/}
             {order.data.basket?.map(item => (
                 <CheckoutProduct
                     id={item.id}
