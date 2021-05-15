@@ -34,9 +34,9 @@ const Orders = () => {
 
             <div className="orders__order">
                 {/* we go per all the orders and output followign for each one of them*/}
-                {orders.map(order => {
-                    <Order order={order} />
-                })}
+                    {orders?.map(order => (
+                        <Order order={order} />
+                    ))}
             </div>
         </div>
     );
