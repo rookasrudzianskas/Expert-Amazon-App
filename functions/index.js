@@ -14,12 +14,16 @@ const app = express();
 // security shit
 app.use(cors({ origin: true }));
 //send and get data in json format
-app.use(express.json)
+app.use(express.json())
 // API routes
 app.get("/", (request, response) => response.status(200).send("hello world"));
 
 // Listen command
 
-export.api = functions.https.onRequest(app);
+exports.api = functions.https.onRequest(app);
+
+
+//example endpoint
+//http://localhost:5001/rookas-amzon-app/us-central1/api
 
 
