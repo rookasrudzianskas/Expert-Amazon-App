@@ -21,3 +21,22 @@
 .order_idStrong {
     font-weight: bolder;
 }
+
+.order__backButton {
+    font-weight: 500;
+    text-align: left;
+    background: #f0c14b;
+    border-radius: 2px;
+    height: 30px;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.order__backButton:hover {
+    transform: scale(1.02);
+    background-color: #e1aa12;
+    box-shadow: 4px 5px 20px -10px rgba(0,0,0,0.75);
+}

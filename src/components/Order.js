@@ -3,8 +3,10 @@ import "./styles/Order.css";
 import moment from "moment";
 import CheckoutProduct from "./CheckoutProduct";
 import CurrencyFormat from "react-currency-format";
+import {Link, useHistory} from "react-router-dom";
 
 const Order = ({ order }) => {
+    const history = useHistory()
 
 
     return (
@@ -41,6 +43,9 @@ const Order = ({ order }) => {
                 thousandSeparator={true}
                 prefix={"$"}
             />
+        <Link to="/" style={{ textDecoration: 'none' }}>
+            <button className="order__backButton">Back Home</button>
+        </Link>
 
         </div>
     );
