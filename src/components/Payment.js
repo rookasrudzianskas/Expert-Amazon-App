@@ -185,13 +185,23 @@ const Payment = () => {
                                     thousandSeparator={true}
                                     prefix={"$"}
                                 />
-
+                                {basket.length >= 1 ? (
                                 <button disabled={processing || disabled || succeeded}>
                                     {/* if processing, it is going to say that the order is processing*/}
                                     <span>{processing ? <p>Processing</p> :
                                     "Buy Now"
                                     }</span>
                                 </button>
+                                ) : (
+                                    <div className="checkout__backHome">
+                                        <h4>Your basket is empty, go back and add some products...</h4>
+
+                                        <Link to="/" style={{ textDecoration: 'none' }}>
+                                            <button  className="checkout__backHomeButton">Back Home</button>
+                                        </Link>
+
+                                    </div>
+                                )}
                             </div>
 
                         {/*    errors   */}
