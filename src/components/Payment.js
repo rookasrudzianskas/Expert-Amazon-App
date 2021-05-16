@@ -153,7 +153,8 @@ const Payment = () => {
                     <div className="payment__items">
                     {/*    all the products goes here   */}
                     {/*     we dispaly for each item in the absket, the checkout product component with props from it*/}
-                        {basket.map(item => (
+                        {basket.length <= 0 ? "There are no items in the basket, please go and add some..." : ""}
+                        {basket?.map(item => (
                             // props come from the data layer basket
                             <CheckoutProduct id={item.id} title={item.title} image={item.image} price={item.price} rating={item.rating} />
                         ))}
