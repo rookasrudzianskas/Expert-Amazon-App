@@ -170,7 +170,12 @@ const Payment = () => {
                     {/*    Stripe is going to go here*/}
                         <form action="" onSubmit={handleSubmit}>
                             {/* every time I change the card element, the handlechange is going to be fired*/}
-                            <CardElement onChange={handleChange}/>
+                            {basket.length >= 1 ? (
+                                <CardElement onChange={handleChange}/>
+                            ) : (
+                                <h4>There are no incoming orders</h4>
+                            )}
+
 
                             <div className="payment__priceContainer">
                                 {/* we form the final sum of money */}
