@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f6cdb71-0995-43eb-9d8e-316eb73ea6d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Payment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/styles/Checkout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/styles/Checkout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/styles/Subtotal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/styles/Subtotal.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <workItem from="1620889925333" duration="442000" />
       <workItem from="1620894329687" duration="4077000" />
       <workItem from="1620961029374" duration="19062000" />
-      <workItem from="1621059123541" duration="26710000" />
+      <workItem from="1621059123541" duration="27104000" />
     </task>
     <servers />
   </component>
