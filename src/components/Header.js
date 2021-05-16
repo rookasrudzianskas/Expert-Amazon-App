@@ -65,7 +65,7 @@ const Header = () => {
                     </span>
 
                 </div>
-            <Link to="/checkout">
+            <Link to="/checkout"  style={{ textDecoration: 'none' }}>
                 <div className="header__optionBasket">
                     <ShoppingBasketIcon />
                     <span className="header__optionLineTwo header__basketCount">

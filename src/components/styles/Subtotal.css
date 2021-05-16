@@ -29,14 +29,13 @@
 
 .subtotal__giftButton {
     background: #f0c14b;
-    border-radius: 2px;
-    width: 100%;
-    height: 30px;
-    border-color: #a88734, #9c7e31, #a88734;
     border: 1px solid;
+    padding: 8px 20px;
     margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
     color: #111;
-    transition: transform 0.2s;
+    transition: all 0.2s;
+    border-radius: 2px;
     cursor: pointer;
 }
 
