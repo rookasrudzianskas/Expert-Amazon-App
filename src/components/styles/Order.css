@@ -17,3 +17,7 @@
     font-weight: 500;
     text-align: right;
 }
+
+.order_idStrong {
+    font-weight: bolder;
+}
