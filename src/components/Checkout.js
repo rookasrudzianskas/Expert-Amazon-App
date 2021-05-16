@@ -4,6 +4,7 @@ import Subtotal from "./Subtotal";
 import CheckoutProduct from "./CheckoutProduct";
 import {useStateValue} from "../StateProvider";
 import Product from "./Product";
+import {Link} from "react-router-dom";
 
 const Checkout = () => {
 
@@ -23,6 +24,19 @@ const Checkout = () => {
                     <h2 className="checkout__title">
                         Your shopping basket
                     </h2>
+
+                    {basket.length <= 0 ?
+
+                        <div className="checkout__backHome">
+                            <h4>Your basket is empty, go back and add some products...</h4>
+
+                            <Link to="/" style={{ textDecoration: 'none' }}>
+                                <button  className="checkout__backHomeButton">Back Home</button>
+                            </Link>
+
+                        </div>
+
+                            : ""}
 
                     {basket.map(item => (
                         <CheckoutProduct
