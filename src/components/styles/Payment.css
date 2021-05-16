@@ -38,20 +38,29 @@
     flex: 0.8;
 }
 
-.payment__details > h3 {
+.order__totalValue {
+    margin-top: 20px;
     padding-bottom: 20px;
 }
 
 .payment__details > form > div > button {
+    margin-top: 20px;
     background: #f0c14b;
     border-radius: 2px;
-    width: 100%;
+    width: 50%;
     height: 30px;
     border: 1px solid;
     font-weight: bold;
-    margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.payment__details > form > div > button:hover {
+    transform: scale(1.02);
+    background-color: #e1aa12;
+    box-shadow: 4px 5px 20px -10px rgba(0,0,0,0.75);
 }
 
 

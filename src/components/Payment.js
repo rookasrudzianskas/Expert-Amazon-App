@@ -176,7 +176,7 @@ const Payment = () => {
                                 {/* we form the final sum of money */}
                                 <CurrencyFormat
                                     renderText={(value) => (
-                                        <h3>Order Total: {value}</h3>
+                                        <h3 className="order__totalValue">Order Total: {value}</h3>
                                     )}
                                     decimalScale={2}
                                      // value comes from the reducer
